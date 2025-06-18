@@ -1,4 +1,8 @@
+
+"use client"
+
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -138,7 +142,7 @@ export default function Portfolio() {
             <Avatar className="w-32 h-32 mx-auto mb-6 ring-4 ring-indigo-200 ring-offset-4 hover:scale-105 transition-transform">
               <AvatarImage src="/placeholder.svg?height=128&width=128" alt="Profile" />
               <AvatarFallback className="text-2xl bg-gradient-to-br from-indigo-500 to-pink-500 text-white">
-                JD
+                AS
               </AvatarFallback>
             </Avatar>
             <motion.div
@@ -158,7 +162,7 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            Hey, I'm Jane Doe! 😎
+            Hey, I&apos;m Anirudh S! 😎
           </motion.h1>
 
           <motion.p
@@ -218,7 +222,7 @@ export default function Portfolio() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me 🌟</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              I'm a tech enthusiast who loves blending code with creativity to build awesome digital experiences!
+              I&apos;m a tech enthusiast who loves blending code with creativity to build awesome digital experiences!
             </p>
           </motion.div>
 
@@ -230,11 +234,11 @@ export default function Portfolio() {
             >
               <div className="flex items-center gap-2 mb-4">
                 <MapPin className="w-5 h-5 text-indigo-600" />
-                <span className="text-gray-600">New York, NY</span>
+                <span className="text-gray-600">Your Location</span>
               </div>
               <p className="text-gray-700 mb-6 leading-relaxed">
                 With 5+ years of coding adventures, I specialize in turning complex challenges into sleek, user-friendly
-                solutions. Let's make the web more fun! 😄
+                solutions. Let&apos;s make the web more fun! 😄
               </p>
               <div className="flex items-center gap-4 mb-8">
                 <div className="flex items-center gap-2">
@@ -312,11 +316,13 @@ export default function Portfolio() {
               >
                 <Card className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
                   <div className="relative overflow-hidden rounded-t-lg">
-                    <img
+                    <Image
                       src={project.image}
                       alt={project.title}
+                      width={300}
+                      height={200}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                      loading="lazy"
+                      priority={index === 0}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -360,17 +366,17 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Let's Connect! 🤝</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Connect! 🤝</h2>
             <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
-              Got an exciting project or just want to chat tech? I'm all ears (or rather, all code)! 😄
+              Got an exciting project or just want to chat tech? I&apos;m all ears (or rather, all code)! 😄
             </p>
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
-              { icon: Mail, title: "Email", value: "jane.doe@example.com", color: "text-indigo-600" },
-              { icon: Linkedin, title: "LinkedIn", value: "linkedin.com/in/janedoe", color: "text-blue-600" },
-              { icon: Github, title: "GitHub", value: "github.com/janedoe", color: "text-gray-800" },
+              { icon: Mail, title: "Email", value: "anirudh.s@example.com", color: "text-indigo-600" },
+              { icon: Linkedin, title: "LinkedIn", value: "linkedin.com/in/anirudhs", color: "text-blue-600" },
+              { icon: Github, title: "GitHub", value: "github.com/bastkor44", color: "text-gray-800" },
             ].map((contact, index) => (
               <motion.div
                 key={contact.title}
@@ -392,7 +398,7 @@ export default function Portfolio() {
             className="bg-gradient-to-r from-indigo-600 to-pink-600 hover:from-indigo-700 hover:to-pink-700"
             asChild
           >
-            <a href="mailto:jane.doe@example.com">
+            <a href="mailto:anirudh.s@example.com">
               <Mail className="w-4 h-4 mr-2" />
               Drop Me a Line
             </a>
@@ -404,7 +410,7 @@ export default function Portfolio() {
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="container mx-auto text-center">
           <p className="text-gray-400">
-            © 2025 Jane Doe. Built with <Heart className="w-4 h-4 inline text-red-500" /> and ☕ buckets of coffee!
+            © 2025 Anirudh S. Built with <Heart className="w-4 h-4 inline text-red-500" /> and ☕ buckets of coffee!
           </p>
         </div>
       </footer>
